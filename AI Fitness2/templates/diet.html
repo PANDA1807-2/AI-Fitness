@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Diet Plan - AI Fitness Care</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/diet.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script>
+        function toggleProfileMenu() {
+            var menu = document.getElementById('profile-menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+        function logout() {
+            window.location.href = "/logout";
+        }
+        document.addEventListener('click', function(event) {
+            var profile = document.getElementById('profile-box');
+            var menu = document.getElementById('profile-menu');
+            if (profile && !profile.contains(event.target)) {
+                menu.style.display = 'none';
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="diet-container">
+        <div id="profile-box" class="profile-box" onclick="toggleProfileMenu()">
+            <i class="fa-solid fa-user-circle fa-2x"></i>
+            <span class="profile-name">{{ session.get('user_email', 'User') }}</span>
+            <div id="profile-menu" class="profile-menu">
+                <button onclick="logout()">Logout</button>
+            </div>
+        </div>
+        <h2>Your Personalized Diet Plan</h2>
+        <p>
+            <!-- Replace this with your diet plan rendering logic -->
+            This section will display your AI-generated diet plan based on your personal info.
+        </p>
+        <a href="/dashboard" class="btn">Back to Dashboard</a>
+    </div>
+</body>
+</html>

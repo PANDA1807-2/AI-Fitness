@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - AI Fitness Care</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <script>
+        function showPopup(message) {
+            document.getElementById('popup-message').innerText = message;
+            document.getElementById('popup').style.display = 'block';
+        }
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+    <style>
+        #popup {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.3);
+            z-index: 999;
+        }
+        #popup-content {
+            background: #fff;
+            color: #333;
+            margin: 18% auto;
+            padding: 30px 28px;
+            width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+            text-align: center;
+        }
+        #popup button {
+            margin-top: 16px;
+            padding: 8px 22px;
+            border: none;
+            border-radius: 6px;
+            background: #97d9e1;
+            color: #fff;
+            cursor: pointer;
+        }
+        #popup button:hover {
+            background: #d9afd9;
+            color: #97d9e1;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form method="POST">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="/signup">Sign up here</a>.</p>
+    </div>
+    <div id="popup">
+        <div id="popup-content">
+            <span id="popup-message"></span><br>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
+    {% if error %}
+    <script>
+        showPopup("{{ error }}");
+    </script>
+    {% endif %}
+</body>
+</html>

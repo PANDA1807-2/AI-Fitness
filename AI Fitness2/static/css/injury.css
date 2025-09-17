@@ -1,0 +1,87 @@
+body {
+    background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.injury-container {
+    width: 500px;
+    margin: 60px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 28px rgba(0,0,0,0.11);
+    padding: 40px 40px 28px;
+    text-align: center;
+    position: relative;
+}
+h2 {
+    color: #f7971e;
+    margin-bottom: 18px;
+}
+p {
+    font-size: 1.13em;
+    margin-bottom: 26px;
+}
+.btn {
+    display: inline-block;
+    background: #f7971e;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+.btn:hover {
+    background: #fff;
+    color: #f7971e;
+    border: 1px solid #f7971e;
+}
+.profile-box {
+    display: inline-block;
+    position: absolute;
+    top: 16px; right: 24px;
+    cursor: pointer;
+    padding: 8px 20px 8px 8px;
+    background: #fffbe6;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    transition: background 0.2s;
+}
+.profile-box:hover {
+    background: #fff4c2;
+}
+.profile-name {
+    margin-left: 12px;
+    font-weight: bold;
+    font-size: 1.12em;
+    color: #555;
+}
+.profile-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 46px;
+    background: #fff;
+    border: 1px solid #f7971e;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    padding: 18px 22px;
+    z-index: 99;
+}
+.profile-menu button {
+    background: #f7971e;
+    color: #fff;
+    padding: 9px 22px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.profile-menu button:hover {
+    background: #fff;
+    color: #f7971e;
+}

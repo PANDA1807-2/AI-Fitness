@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - AI Fitness Care</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script>
+        function toggleProfileMenu() {
+            var menu = document.getElementById('profile-menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+        function logout() {
+            window.location.href = "/logout";
+        }
+        document.addEventListener('click', function(event) {
+            var profile = document.getElementById('profile-box');
+            var menu = document.getElementById('profile-menu');
+            if (profile && !profile.contains(event.target)) {
+                menu.style.display = 'none';
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="website-info">
+            <h2>Welcome to AI Fitness Care</h2>
+            <p>
+                AI Fitness Care is your personal assistant for diet planning and fitness management.<br>
+                Get personalized diet recommendations, track your progress, and receive injury recovery guidance when needed.
+            </p>
+        </div>
+        <div id="profile-box" class="profile-box" onclick="toggleProfileMenu()">
+            <i class="fa-solid fa-user-circle fa-2x"></i>
+            <span class="profile-name">{{ username }}</span>
+            <div id="profile-menu" class="profile-menu">
+                <button onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        {% if info_needed %}
+        <div class="info-form-section">
+            <h3>Fill Your Fitness Info</h3>
+            <form method="POST" class="info-form">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" name="height" required min="50" max="250" value="{{ height }}">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" required min="20" max="300" value="{{ weight }}">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required min="1" max="120" value="{{ age }}">
+                <button type="submit">Save Info</button>
+            </form>
+        </div>
+        {% else %}
+        <div class="dashboard-actions">
+            <a href="/diet" class="btn">Get Diet Plan</a>
+            <a href="/injury" class="btn">Injury Recovery</a>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Injury Recovery - AI Fitness Care</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/injury.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script>
+        function toggleProfileMenu() {
+            var menu = document.getElementById('profile-menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+        function logout() {
+            window.location.href = "/logout";
+        }
+        document.addEventListener('click', function(event) {
+            var profile = document.getElementById('profile-box');
+            var menu = document.getElementById('profile-menu');
+            if (profile && !profile.contains(event.target)) {
+                menu.style.display = 'none';
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="injury-container">
+        <div id="profile-box" class="profile-box" onclick="toggleProfileMenu()">
+            <i class="fa-solid fa-user-circle fa-2x"></i>
+            <span class="profile-name">{{ session.get('user_email', 'User') }}</span>
+            <div id="profile-menu" class="profile-menu">
+                <button onclick="logout()">Logout</button>
+            </div>
+        </div>
+        <h2>Injury Recovery Guidance</h2>
+        <p>
+            <!-- Replace this with your injury recovery rendering logic -->
+            This section will provide personalized recovery guidance based on your fitness profile.
+        </p>
+        <a href="/dashboard" class="btn">Back to Dashboard</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+body {
+    background: linear-gradient(135deg, #c2e9fb 0%, #81a4fd 100%);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.dashboard-container {
+    width: 600px;
+    margin: 60px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 28px rgba(0,0,0,0.11);
+    padding: 40px 40px 28px;
+    text-align: center;
+    position: relative;
+}
+.website-info {
+    margin-bottom: 32px;
+}
+.website-info h2 {
+    color: #81a4fd;
+}
+.website-info p {
+    font-size: 1.15em;
+    color: #333;
+    margin-top: 10px;
+}
+.profile-box {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 8px 24px 8px 8px;
+    background: #f2f8ff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    transition: background 0.2s;
+}
+.profile-box:hover {
+    background: #e9f3fe;
+}
+.profile-name {
+    margin-left: 12px;
+    font-weight: bold;
+    font-size: 1.12em;
+    color: #555;
+}
+.profile-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 46px;
+    background: #fff;
+    border: 1px solid #81a4fd;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    padding: 18px 22px;
+    z-index: 99;
+}
+.profile-menu button {
+    background: #81a4fd;
+    color: #fff;
+    padding: 9px 22px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.profile-menu button:hover {
+    background: #c2e9fb;
+    color: #81a4fd;
+}
+.info-form-section {
+    margin: 32px auto 0;
+    background: #e3f1fe;
+    border-radius: 10px;
+    padding: 35px 28px;
+    box-shadow: 0 2px 12px rgba(129,164,253,0.10);
+    width: 400px;
+}
+.info-form label {
+    text-align: left;
+    color: #444;
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+.info-form input {
+    padding: 9px 12px;
+    border: 1px solid #81a4fd;
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+    margin-bottom: 18px;
+    width: 100%;
+}
+.info-form button {
+    background: #81a4fd;
+    color: #fff;
+    padding: 10px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+}
+.info-form button:hover {
+    background: #fff;
+    color: #81a4fd;
+    border: 1px solid #81a4fd;
+}
+.dashboard-actions {
+    margin-top: 36px;
+}
+.btn {
+    display: inline-block;
+    background: #81a4fd;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    border: none;
+    cursor: pointer;
+    margin: 0 16px;
+}
+.btn:hover {
+    background: #fff;
+    color: #81a4fd;
+    border: 1px solid #81a4fd;
+}
